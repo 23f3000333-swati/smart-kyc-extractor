@@ -1,0 +1,2361 @@
+{
+  "mode": "offline",
+  "thresholds": {
+    "printed": 0.8,
+    "handwritten_high_value": 0.85
+  },
+  "documents": [
+    {
+      "file": "Aadhar.png",
+      "doc_type": "AADHAAR",
+      "classification_confidence": 1.0,
+      "classification_detail": "AADHAAR",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "aadhaar_number": {
+          "value": "123456789012",
+          "raw": "12345678 9012",
+          "confidence": 0.89,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "1234 5678 9012",
+              "conf": 0.746,
+              "normalized": "123456789012"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "1234 5678 9012",
+              "conf": 0.746,
+              "normalized": "123456789012"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "12345678 9012",
+              "conf": 0.85,
+              "normalized": "123456789012"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "1234 5678 9012",
+              "conf": 0.85,
+              "normalized": "123456789012"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "1234 5678 9012",
+              "conf": 0.85,
+              "normalized": "123456789012"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": [
+              "Aadhaar cannot start with 0/1 (sample card?)",
+              "Verhoeff checksum fails (sample card?)"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "validity warning: Aadhaar cannot start with 0/1 (sample card?); Verhoeff checksum fails (sample card?)"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.85,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "full_name": {
+          "value": "Mr. Ashok",
+          "raw": "Mr. Ashok",
+          "confidence": 0.865,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "Mr. Ashok",
+              "conf": 0.666,
+              "normalized": "Mr. Ashok"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "Mr. Ashok",
+              "conf": 0.705,
+              "normalized": "Mr. Ashok"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.705,
+          "two_pass": 1.0,
+          "cross_doc": 0.833
+        },
+        "date_of_birth": {
+          "value": "18/12/1979",
+          "raw": "18/12/1979",
+          "confidence": 0.984,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "18/12/1979",
+              "conf": 0.961,
+              "normalized": "18/12/1979"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "18/12/1979",
+              "conf": 0.912,
+              "normalized": "18/12/1979"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.961,
+          "two_pass": 1.0,
+          "cross_doc": 1.0
+        },
+        "address": {
+          "value": "S/O Kumar, Kataia, West Bihar India 841543",
+          "raw": "SIO Kumar, Kataia, West Bihar India 841543",
+          "confidence": 0.829,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "SIO Kumar, Kataia, TTAThT West Bihar India 841543",
+              "conf": 0.749,
+              "normalized": "S/O Kumar, Kataia, TTAThT West Bihar India 841543"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "SIO Kumar, Kataia, West Bihar India 841543",
+              "conf": 0.863,
+              "normalized": "S/O Kumar, Kataia, West Bihar India 841543"
+            }
+          ],
+          "corrections": [
+            "'SIO'->'S/O' (relation prefix)"
+          ],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.863,
+          "two_pass": 0.917,
+          "cross_doc": 0.5
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "Assignment Ashok.pdf",
+      "doc_type": "OTHER",
+      "classification_confidence": 1.0,
+      "classification_detail": "OTHER_ASSIGNMENT",
+      "flagged": true,
+      "flag_reasons": [
+        "out of scope, not extracted"
+      ],
+      "fields": {},
+      "auxiliary": {}
+    },
+    {
+      "file": "ChatGPT Image May 2, 2026, 03_43_11 PM.png",
+      "doc_type": "DRIVING_LICENCE",
+      "classification_confidence": 1.0,
+      "classification_detail": "DRIVING_LICENCE",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "dl_number": {
+          "value": "MH1220210001234",
+          "raw": "MH12 2021 0001234",
+          "confidence": 0.947,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "MH12 2021 0001234",
+              "conf": 0.993,
+              "normalized": "MH1220210001234"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "MH12 2021 0001234",
+              "conf": 0.975,
+              "normalized": "MH1220210001234"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "MH12 2021 0001234",
+              "conf": 0.975,
+              "normalized": "MH1220210001234"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "cross-doc: DL number prefix MH = MAHARASHTRA, but the licence address/authority mentions BIHAR"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.993,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "name": {
+          "value": "MR. ASHOK",
+          "raw": "MR. ASHOK",
+          "confidence": 0.911,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "MR. ASHOK",
+              "conf": 0.578,
+              "normalized": "MR. ASHOK"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "MR. ASHOK",
+              "conf": 0.82,
+              "normalized": "MR. ASHOK"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.82,
+          "two_pass": 1.0,
+          "cross_doc": 0.833
+        },
+        "date_of_issue": {
+          "value": "15/06/2021",
+          "raw": "15/06/2021",
+          "confidence": 0.95,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "15/06/2021",
+              "conf": 1.0,
+              "normalized": "15/06/2021"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "15/06/2021",
+              "conf": 1.0,
+              "normalized": "15/06/2021"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 1.0,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "valid_till": {
+          "value": "14/06/2041",
+          "raw": "14/06/2041",
+          "confidence": 0.95,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "14/06/2041",
+              "conf": 1.0,
+              "normalized": "14/06/2041"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "14/06/2041",
+              "conf": 1.0,
+              "normalized": "14/06/2041"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 1.0,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        }
+      },
+      "auxiliary": {
+        "address": {
+          "value": "S/O KUMAR, KATAIA, WEST BIHAR INDIA 841543",
+          "raw": "S/O KUMAR, KATAIA, WEST BIHAR INDIA 841543"
+        },
+        "licencing_authority": {
+          "value": "RTO, GAYA",
+          "raw": "RTO, GAYA"
+        }
+      }
+    },
+    {
+      "file": "ChatGPT Image May 2, 2026, 03_52_54 PM.png",
+      "doc_type": "PASSPORT",
+      "classification_confidence": 1.0,
+      "classification_detail": "PASSPORT",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "passport_number": {
+          "value": "X1234567",
+          "raw": "X1234567",
+          "confidence": 0.95,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "X1234567",
+              "conf": 0.999,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "X1234567",
+              "conf": 0.999,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "X1234567",
+              "conf": 0.999,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "X1234567",
+              "conf": 0.999,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "X1234567",
+              "conf": 0.951,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "X1234567",
+              "conf": 0.951,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "X1234567",
+              "conf": 0.951,
+              "normalized": "X1234567"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "X1234567",
+              "conf": 0.951,
+              "normalized": "X1234567"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.999,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "date_of_birth": {
+          "value": "18/12/1979",
+          "raw": "18/12/1979 M",
+          "confidence": 0.99,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "18/12/1979 M",
+              "conf": 0.94,
+              "normalized": "18/12/1979"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "18/12/1979 M",
+              "conf": 0.974,
+              "normalized": "18/12/1979"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.974,
+          "two_pass": 1.0,
+          "cross_doc": 1.0
+        },
+        "date_of_expiry": {
+          "value": "01/01/2030",
+          "raw": "01/01/2030 PATNA",
+          "confidence": 0.934,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "01/01/2030 PATNA",
+              "conf": 0.961,
+              "normalized": "01/01/2030"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "01/01/2030 PATNA",
+              "conf": 0.937,
+              "normalized": "01/01/2030"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.961,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "mrz_line_2": {
+          "value": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+          "raw": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+          "confidence": 0.592,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_crop",
+              "version": "original",
+              "text": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+              "conf": 0.98,
+              "pre_fix": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+              "fix": [],
+              "glyphs": 50,
+              "normalized": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08"
+            },
+            {
+              "engine": "easyocr_crop",
+              "version": "enhanced",
+              "text": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+              "conf": 0.832,
+              "pre_fix": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+              "fix": [],
+              "glyphs": 50,
+              "normalized": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08",
+              "conf": 0.298,
+              "pre_fix": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<08",
+              "fix": [
+                "filler run 19 -> 20 '<' (counted 50 glyphs on the line)"
+              ],
+              "normalized": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08"
+            }
+          ],
+          "corrections": [
+            "filler run 19 -> 20 '<' (counted 50 glyphs on the line)"
+          ],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "length 50 != 44 (non-standard TD3 line)",
+              "date of birth check digit '5' != computed 2",
+              "date of expiry check digit '0' != computed 9"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.59 < 0.80",
+            "validator failed: length 50 != 44 (non-standard TD3 line); date of birth check digit '5' != computed 2; date of expiry check digit '0' != computed 9"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.98,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "ECS.jpeg",
+      "doc_type": "NACH_MANDATE",
+      "classification_confidence": 1.0,
+      "classification_detail": "NACH_MANDATE",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "bank_account_number": {
+          "value": "1704258912",
+          "raw": "1704258912",
+          "confidence": 0.675,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "BOLDOBIBAYALLY OF RETAIFORMMENTATION",
+              "conf": 0.316,
+              "normalized": "800081801010"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "57",
+              "conf": 0.131,
+              "normalized": "57"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_cells",
+              "text": "1904262122",
+              "conf": 0.766,
+              "normalized": "1904262122"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "BOLDOMBBOARDAL OF STATEMENTMENTATION",
+              "conf": 0.244,
+              "normalized": "800088000510"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "514",
+              "conf": 0.184,
+              "normalized": "514"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_cells",
+              "text": "1704258912",
+              "conf": 0.793,
+              "normalized": "1704258912"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.68 < 0.85"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.793,
+          "two_pass": 0.288,
+          "cross_doc": 0.5
+        },
+        "ifsc_code": {
+          "value": "BIN6227012",
+          "raw": "81N6227012",
+          "confidence": 0.217,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "is its wholesalers .",
+              "conf": 0.373,
+              "normalized": "ISIT5WHOLESALERS"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "SZPPF",
+              "conf": 0.07,
+              "normalized": "SZPPF"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_cells",
+              "text": "81N6227012",
+              "conf": 0.754,
+              "normalized": "BIN6227012"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "is a more low in a",
+              "conf": 0.326,
+              "normalized": "ISAM0RELOWINA"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "HDE1",
+              "conf": 0.057,
+              "normalized": "HDEI"
+            },
+            {
+              "engine": "easyocr_label_box",
+              "version": "enhanced",
+              "text": "[S",
+              "conf": 0.5,
+              "normalized": "S"
+            }
+          ],
+          "corrections": [
+            "pos 0: '8'->'B'",
+            "pos 1: '1'->'I'"
+          ],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "IFSC format ^[A-Z]{4}0[A-Z0-9]{6}$ fails"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.22 < 0.85",
+            "validator failed: IFSC format ^[A-Z]{4}0[A-Z0-9]{6}$ fails"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.754,
+          "two_pass": 0.079,
+          "cross_doc": 0.5
+        },
+        "bank_name": {
+          "value": "State Bank of India",
+          "raw": "6LQ1014I2L51211LLZLL LL Stale Bank pLInia",
+          "confidence": 0.458,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "' State- \" Home . ' ' ' I don't",
+              "conf": 0.345,
+              "normalized": "' State- \" Home . ' ' ' I don't"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "BLQ1014I216I2 !4LLZLLLL Stale Bank Dl India",
+              "conf": 0.174,
+              "normalized": "Bank of India"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "HelpLearn to edit",
+              "conf": 0.511,
+              "normalized": "HelpLearn to edit"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "6LQ1014I2L51211LLZLL LL Stale Bank pLInia",
+              "conf": 0.231,
+              "normalized": "State Bank of India"
+            }
+          ],
+          "corrections": [
+            "bank name '6LQ1014I2L51211LLZLL LL Stale Bank pLInia'->'State Bank of India' (0.75)"
+          ],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.46 < 0.80"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.231,
+          "two_pass": 0.578,
+          "cross_doc": 0.5
+        },
+        "amount_figures": {
+          "value": "350006",
+          "raw": "350,006",
+          "confidence": 0.467,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "1/2 50,000 .",
+              "conf": 0.606,
+              "normalized": "1"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "350,006",
+              "conf": 0.473,
+              "normalized": "350006"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "JIRE00000 .",
+              "conf": 0.521,
+              "normalized": "00000"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "350,006",
+              "conf": 0.909,
+              "normalized": "350006"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "amount in words (50000) != figures (350006)"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.47 < 0.80",
+            "validator failed: amount in words (50000) != figures (350006)"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.909,
+          "two_pass": 0.515,
+          "cross_doc": 0.5
+        },
+        "frequency": {
+          "value": "As & when presented",
+          "raw": "As & when presented",
+          "confidence": 0.9,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "engine": "checkbox_density",
+              "version": "original",
+              "text": "As & when presented",
+              "conf": 1.0,
+              "densities": {
+                "As & when presented": 0.095
+              },
+              "struck_out": [],
+              "normalized": "As & when presented"
+            },
+            {
+              "engine": "checkbox_density",
+              "version": "enhanced",
+              "text": "As & when presented",
+              "conf": 1.0,
+              "densities": {
+                "As & when presented": 0.107
+              },
+              "struck_out": [],
+              "normalized": "As & when presented"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": [
+              "option labels not found: ['H. Yrly', 'Monthly', 'Qly', 'Yrly']"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "validity warning: option labels not found: ['H. Yrly', 'Monthly', 'Qly', 'Yrly']"
+          ],
+          "threshold": 0.8,
+          "read_conf": 1.0,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        }
+      },
+      "auxiliary": {
+        "amount_words": {
+          "value": "fifty thousand only-millions in",
+          "raw": "fifty thousand only-millions in"
+        }
+      }
+    },
+    {
+      "file": "Fatca.jpeg",
+      "doc_type": "FATCA_ANNEXURE",
+      "classification_confidence": 1.0,
+      "classification_detail": "FATCA_ANNEXURE",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "policy_number": {
+          "value": "65131125",
+          "raw": "65131125",
+          "confidence": 0.637,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Missouri37601025 -",
+              "conf": 0.409,
+              "normalized": "1550137601025"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "65131125",
+              "conf": 0.754,
+              "normalized": "65131125"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Insolidation . .",
+              "conf": 0.409,
+              "normalized": "1501110"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "11571376126",
+              "conf": 0.263,
+              "normalized": "11571376126"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.64 < 0.80",
+            "cross-doc: application_number differs from BENEFIT_ILLUSTRATION.application_number = '150013161095'",
+            "cross-doc: application_number differs from MORAL_HAZARD.application_number = '1500137601025'",
+            "cross-doc: application_number differs from SUITABILITY_PROFILER.application_number = '150013161025'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.754,
+          "two_pass": 0.429,
+          "cross_doc": 0.0
+        },
+        "tin_pan": {
+          "value": "BPQPD3051R",
+          "raw": "BPQPD 305I R.",
+          "confidence": 0.725,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "BPQPD 305I R.",
+              "conf": 0.81,
+              "normalized": "BPQPD3051R"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "BPQPD305 P",
+              "conf": 0.83,
+              "normalized": "BPQPD305P"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "BPQPD 305I R.",
+              "conf": 0.84,
+              "normalized": "BPQPD3051R"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "BPQPD3051R",
+              "conf": 0.743,
+              "normalized": "BPQPD3051R"
+            }
+          ],
+          "corrections": [
+            "pos 8: 'I'->'1'"
+          ],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.72 < 0.85",
+            "cross-doc: pan differs from PAN.pan_number = 'ABCDE1234F'"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.84,
+          "two_pass": 0.947,
+          "cross_doc": 0.0
+        },
+        "fathers_name": {
+          "value": "Arjun , Das Kuma",
+          "raw": "Arjun , Das Kuma",
+          "confidence": 0.691,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Arjun , Das Kuma",
+              "conf": 0.766,
+              "normalized": "Arjun , Das Kuma"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Ariun Doc Kimm",
+              "conf": 0.437,
+              "normalized": "Ariun Doc Kimm"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Arjun , Dog Kuma",
+              "conf": 0.573,
+              "normalized": "Arjun , Dog Kuma"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Ariun Doc Kim",
+              "conf": 0.573,
+              "normalized": "Ariun Doc Kim"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.69 < 0.80",
+            "cross-doc: fathers_name differs from PAN.fathers_name = 'KUMAR'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.766,
+          "two_pass": 0.675,
+          "cross_doc": 0.0
+        },
+        "place_of_birth": {
+          "value": "won together",
+          "raw": "won together .",
+          "confidence": 0.621,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "won together .",
+              "conf": 0.598,
+              "normalized": "won together"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Weq 4 Behax",
+              "conf": 0.37,
+              "normalized": "Weq  Behax"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Woot Behar .",
+              "conf": 0.386,
+              "normalized": "Woot Behar"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "WJeq + Behx",
+              "conf": 0.343,
+              "normalized": "WJeq  Behx"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.62 < 0.85"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.598,
+          "two_pass": 0.411,
+          "cross_doc": 0.5
+        },
+        "nationality": {
+          "value": "IMLEN",
+          "raw": "Imlen .",
+          "confidence": 0.455,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Imlen .",
+              "conf": 0.779,
+              "normalized": "IMLEN"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Lrleon",
+              "conf": 0.6,
+              "normalized": "LRLEON"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Imlen ,",
+              "conf": 0.577,
+              "normalized": "IMLEN"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "rleon",
+              "conf": 0.289,
+              "normalized": "RLEON"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "unknown nationality 'IMLEN'"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.46 < 0.80",
+            "validator failed: unknown nationality 'IMLEN'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.779,
+          "two_pass": 0.715,
+          "cross_doc": 0.5
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "ID.png",
+      "doc_type": "PAN",
+      "classification_confidence": 1.0,
+      "classification_detail": "PAN",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "pan_number": {
+          "value": "ABCDE1234F",
+          "raw": "ABCDE1234F",
+          "confidence": 0.9,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "ABCDE1234F",
+              "conf": 0.988,
+              "normalized": "ABCDE1234F"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "ABCDE1234F",
+              "conf": 0.988,
+              "normalized": "ABCDE1234F"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "ABCDE1234F",
+              "conf": 1.0,
+              "normalized": "ABCDE1234F"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "ABCDE1234F",
+              "conf": 1.0,
+              "normalized": "ABCDE1234F"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": [
+              "4th char 'D' is not a valid PAN holder type"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "validity warning: 4th char 'D' is not a valid PAN holder type",
+            "cross-doc: pan differs from FATCA_ANNEXURE.tin_pan = 'BPQPD3051R'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 1.0,
+          "two_pass": 1.0,
+          "cross_doc": 0.0
+        },
+        "full_name": {
+          "value": "MR. ASHOK",
+          "raw": "MR. ASHOK",
+          "confidence": 0.856,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "MR. ASHOK",
+              "conf": 0.679,
+              "normalized": "MR. ASHOK"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "MR. ASHOK",
+              "conf": 0.682,
+              "normalized": "MR. ASHOK"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.682,
+          "two_pass": 1.0,
+          "cross_doc": 0.833
+        },
+        "fathers_name": {
+          "value": "KUMAR",
+          "raw": "S/O KUMAR",
+          "confidence": 0.896,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "S/O KUMAR",
+              "conf": 0.983,
+              "normalized": "KUMAR"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "S/O KUMAR",
+              "conf": 0.991,
+              "normalized": "KUMAR"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "cross-doc: fathers_name differs from FATCA_ANNEXURE.fathers_name = 'Arjun , Das Kuma'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.991,
+          "two_pass": 1.0,
+          "cross_doc": 0.0
+        },
+        "date_of_birth": {
+          "value": "18/12/1979",
+          "raw": "18/12/1979 Ashok",
+          "confidence": 0.946,
+          "handwritten": false,
+          "raw_readings": [
+            {
+              "engine": "easyocr_page",
+              "version": "original",
+              "text": "18/12/1979 Ashok",
+              "conf": 0.99,
+              "normalized": "18/12/1979"
+            },
+            {
+              "engine": "easyocr_page",
+              "version": "enhanced",
+              "text": "18/12/1979 Ashok",
+              "conf": 0.792,
+              "normalized": "18/12/1979"
+            }
+          ],
+          "corrections": [
+            "letters->digits '18/12/1979 Ashok'->'18/12/1979 A5h0k'"
+          ],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.99,
+          "two_pass": 1.0,
+          "cross_doc": 1.0
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "Illustration.jpeg",
+      "doc_type": "BENEFIT_ILLUSTRATION",
+      "classification_confidence": 0.875,
+      "classification_detail": "BENEFIT_ILLUSTRATION",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "application_number": {
+          "value": "150013161095",
+          "raw": "150013161095-",
+          "confidence": 0.583,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "150013161095-",
+              "conf": 0.429,
+              "normalized": "150013161095"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "50013711021",
+              "conf": 0.251,
+              "normalized": "50013711021"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "legislation .",
+              "conf": 0.477,
+              "normalized": "115110"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "500137116217",
+              "conf": 0.233,
+              "normalized": "500137116217"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.58 < 0.80",
+            "cross-doc: application_number differs from FATCA_ANNEXURE.policy_number = '65131125'",
+            "cross-doc: application_number differs from MORAL_HAZARD.application_number = '1500137601025'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.429,
+          "two_pass": 0.639,
+          "cross_doc": 0.333
+        },
+        "policyholder_name": {
+          "value": "Ashok",
+          "raw": "Ashok",
+          "confidence": 0.81,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Ashok .",
+              "conf": 0.502,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Ashok",
+              "conf": 0.585,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Ashok ...",
+              "conf": 0.542,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Ashok",
+              "conf": 0.691,
+              "normalized": "Ashok"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.691,
+          "two_pass": 1.0,
+          "cross_doc": 0.833
+        },
+        "date": {
+          "value": "/-6 01",
+          "raw": "/-6 01",
+          "confidence": 0.265,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "advantages . .",
+              "conf": 0.212,
+              "normalized": "advantages . ."
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "/-25 0",
+              "conf": 0.348,
+              "normalized": "/-25 0"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "advantages of age",
+              "conf": 0.336,
+              "normalized": "advantages of age"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "/-6 01",
+              "conf": 0.608,
+              "normalized": "/-6 01"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "not a valid DD/MM/YYYY date"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.27 < 0.85",
+            "validator failed: not a valid DD/MM/YYYY date"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.608,
+          "two_pass": 0.111,
+          "cross_doc": 0.5
+        },
+        "place": {
+          "value": "hles A Bikax",
+          "raw": "hles A Bikax",
+          "confidence": 0.493,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "displaystyle",
+              "conf": 0.194,
+              "normalized": "displaystyle"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "obhrdkiat ~loc 4 Rsha LDiGia",
+              "conf": 0.246,
+              "normalized": "obhrdkiat loc  Rsha LDiGia"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "display #",
+              "conf": 0.21,
+              "normalized": "display"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "ophurdkiat ~loc 4 Rshar Az Sa",
+              "conf": 0.276,
+              "normalized": "ophurdkiat loc  Rshar Az Sa"
+            },
+            {
+              "engine": "easyocr_label_box",
+              "version": "enhanced",
+              "text": "hles A Bikax",
+              "conf": 0.5,
+              "normalized": "hles A Bikax"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.49 < 0.85",
+            "cross-doc: signing_place differs from MORAL_HAZARD.place = 'West Rams'",
+            "cross-doc: signing_place differs from MULTIPLE_POLICIES_CONSENT.place = 'West Bihar'",
+            "cross-doc: signing_place differs from SUITABILITY_PROFILER.place = 'most extra'"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.5,
+          "two_pass": 0.214,
+          "cross_doc": 0.0
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "Moral.jpeg",
+      "doc_type": "MORAL_HAZARD",
+      "classification_confidence": 0.924,
+      "classification_detail": "MORAL_HAZARD",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "application_number": {
+          "value": "1500137601025",
+          "raw": "1500137601025",
+          "confidence": 0.842,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "# 150013761025",
+              "conf": 0.737,
+              "normalized": "150013761025"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "1500137601025",
+              "conf": 0.994,
+              "normalized": "1500137601025"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "# 150013761025",
+              "conf": 0.717,
+              "normalized": "150013761025"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "1500137601025",
+              "conf": 0.966,
+              "normalized": "1500137601025"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "cross-doc: application_number differs from FATCA_ANNEXURE.policy_number = '65131125'",
+            "cross-doc: application_number differs from BENEFIT_ILLUSTRATION.application_number = '150013161095'",
+            "cross-doc: application_number differs from SUITABILITY_PROFILER.application_number = '150013161025'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.994,
+          "two_pass": 0.973,
+          "cross_doc": 0.0
+        },
+        "name_of_life_assured": {
+          "value": "Asbok",
+          "raw": "Asbok",
+          "confidence": 0.785,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Ashak . .",
+              "conf": 0.453,
+              "normalized": "Ashak"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Asbok",
+              "conf": 0.905,
+              "normalized": "Asbok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Ashok . .",
+              "conf": 0.493,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Asbok",
+              "conf": 0.937,
+              "normalized": "Asbok"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.79 < 0.80",
+            "cross-doc: applicant_name differs from AADHAAR.full_name = 'Mr. Ashok'",
+            "cross-doc: applicant_name differs from PAN.full_name = 'MR. ASHOK'",
+            "cross-doc: applicant_name differs from DRIVING_LICENCE.name = 'MR. ASHOK'",
+            "cross-doc: applicant_name differs from BENEFIT_ILLUSTRATION.policyholder_name = 'Ashok'",
+            "cross-doc: applicant_name differs from MULTIPLE_POLICIES_CONSENT.proposer_name = 'Ashok'",
+            "cross-doc: applicant_name differs from SUITABILITY_PROFILER.name_of_life_assured = 'Ashok'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.937,
+          "two_pass": 0.8,
+          "cross_doc": 0.0
+        },
+        "nominee_relationship": {
+          "value": "of nominee Klepheu",
+          "raw": "of nominee 'Klepheu",
+          "confidence": 0.38,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "' promises ... Help how ...",
+              "conf": 0.307,
+              "normalized": "promises  Help how"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "of nominee \"Kiepheu",
+              "conf": 0.651,
+              "normalized": "of nominee Kiepheu"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "a member",
+              "conf": 0.266,
+              "normalized": "a member"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "of nominee 'Klepheu",
+              "conf": 0.662,
+              "normalized": "of nominee Klepheu"
+            },
+            {
+              "engine": "easyocr_label_box",
+              "version": "enhanced",
+              "text": "* of nominee",
+              "conf": 0.5,
+              "normalized": "of nominee"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "'of nominee Klepheu' is not a known relationship"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.38 < 0.80",
+            "validator failed: 'of nominee Klepheu' is not a known relationship"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.662,
+          "two_pass": 0.576,
+          "cross_doc": 0.5
+        },
+        "date": {
+          "value": "Dommryry Places .",
+          "raw": "Dommryry Places .",
+          "confidence": 0.224,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Dommryry Places .",
+              "conf": 0.578,
+              "normalized": "Dommryry Places ."
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "03- 8.--",
+              "conf": 0.089,
+              "normalized": "03- 8.--"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "consumer places .",
+              "conf": 0.551,
+              "normalized": "consumer places ."
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "03/0 8--",
+              "conf": 0.106,
+              "normalized": "03/0 8--"
+            }
+          ],
+          "corrections": [
+            "letters->digits 'Dommryry Places .'->'00mmryry P1ace5 .'"
+          ],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "not a valid DD/MM/YYYY date"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.22 < 0.85",
+            "validator failed: not a valid DD/MM/YYYY date"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.578,
+          "two_pass": 0.214,
+          "cross_doc": 0.5
+        },
+        "place": {
+          "value": "West Rams",
+          "raw": "West Rams .",
+          "confidence": 0.647,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "West Rams .",
+              "conf": 0.704,
+              "normalized": "West Rams"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Inlos / Rimr",
+              "conf": 0.482,
+              "normalized": "Inlos  Rimr"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "West Rams .",
+              "conf": 0.473,
+              "normalized": "West Rams"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Ilos / Rimr",
+              "conf": 0.351,
+              "normalized": "Ilos  Rimr"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.65 < 0.85",
+            "cross-doc: signing_place differs from BENEFIT_ILLUSTRATION.place = 'hles A Bikax'",
+            "cross-doc: signing_place differs from MULTIPLE_POLICIES_CONSENT.place = 'West Bihar'",
+            "cross-doc: signing_place differs from SUITABILITY_PROFILER.place = 'most extra'"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.704,
+          "two_pass": 0.576,
+          "cross_doc": 0.0
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "Proposal Ashok.pdf",
+      "doc_type": "OTHER",
+      "classification_confidence": 1.0,
+      "classification_detail": "OTHER_PROPOSAL",
+      "flagged": true,
+      "flag_reasons": [
+        "out of scope, not extracted"
+      ],
+      "fields": {},
+      "auxiliary": {}
+    },
+    {
+      "file": "split.jpeg",
+      "doc_type": "MULTIPLE_POLICIES_CONSENT",
+      "classification_confidence": 1.0,
+      "classification_detail": "MULTIPLE_POLICIES_CONSENT",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "proposer_name": {
+          "value": "Ashok",
+          "raw": "Ashok",
+          "confidence": 0.91,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Ashok",
+              "conf": 0.919,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Ashok",
+              "conf": 0.845,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Ashok",
+              "conf": 0.871,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Ashok",
+              "conf": 0.942,
+              "normalized": "Ashok"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.942,
+          "two_pass": 1.0,
+          "cross_doc": 0.833
+        },
+        "reason_for_multiple_policies": {
+          "value": "Financial Planning",
+          "raw": "Financial Planning",
+          "confidence": 0.828,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "engine": "checkbox_density",
+              "version": "original",
+              "text": "Financial Planning",
+              "conf": 0.82,
+              "densities": {
+                "Financial Planning": 0.075,
+                "Different investment": 0.05,
+                "Separate policy": 0.051,
+                "Others": 0.051
+              },
+              "struck_out": [],
+              "normalized": "Financial Planning"
+            },
+            {
+              "engine": "checkbox_density",
+              "version": "enhanced",
+              "text": "Financial Planning",
+              "conf": 0.787,
+              "densities": {
+                "Financial Planning": 0.08,
+                "Different investment": 0.052,
+                "Separate policy": 0.057,
+                "Others": 0.053
+              },
+              "struck_out": [],
+              "normalized": "Financial Planning"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.82,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "date": {
+          "value": "26/04/2026",
+          "raw": "26 104 12026",
+          "confidence": 0.767,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "2610412026",
+              "conf": 0.846,
+              "normalized": "26/04/2026"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "26 104 2026",
+              "conf": 0.672,
+              "normalized": "26 104 2026"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "2610412026",
+              "conf": 0.826,
+              "normalized": "26/04/2026"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "26 104 12026",
+              "conf": 0.876,
+              "normalized": "26/04/2026"
+            },
+            {
+              "engine": "easyocr_label_box",
+              "version": "enhanced",
+              "text": "26",
+              "conf": 0.5,
+              "normalized": "26"
+            }
+          ],
+          "corrections": [
+            "pos 2,5: '1','1' -> '/' (slash slots)"
+          ],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.77 < 0.85"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.876,
+          "two_pass": 0.835,
+          "cross_doc": 0.5
+        },
+        "place": {
+          "value": "West Bihar",
+          "raw": "West Bihar .",
+          "confidence": 0.757,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "West Bihar .",
+              "conf": 0.816,
+              "normalized": "West Bihar"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "WesE B; har",
+              "conf": 0.63,
+              "normalized": "WesE B har"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "West Bihar .",
+              "conf": 0.812,
+              "normalized": "West Bihar"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "WesE Bi har",
+              "conf": 0.347,
+              "normalized": "WesE Bi har"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.76 < 0.85",
+            "cross-doc: signing_place differs from BENEFIT_ILLUSTRATION.place = 'hles A Bikax'",
+            "cross-doc: signing_place differs from MORAL_HAZARD.place = 'West Rams'",
+            "cross-doc: signing_place differs from SUITABILITY_PROFILER.place = 'most extra'"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.816,
+          "two_pass": 0.904,
+          "cross_doc": 0.0
+        }
+      },
+      "auxiliary": {}
+    },
+    {
+      "file": "suitability.jpeg",
+      "doc_type": "SUITABILITY_PROFILER",
+      "classification_confidence": 1.0,
+      "classification_detail": "SUITABILITY_PROFILER",
+      "flagged": true,
+      "flag_reasons": [],
+      "fields": {
+        "application_number": {
+          "value": "150013161025",
+          "raw": "150013161025",
+          "confidence": 0.768,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "150013161025",
+              "conf": 0.748,
+              "normalized": "150013161025"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "10031601025",
+              "conf": 0.405,
+              "normalized": "10031601025"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "150013161025",
+              "conf": 0.595,
+              "normalized": "150013161025"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "500131601025",
+              "conf": 0.706,
+              "normalized": "500131601025"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.77 < 0.80",
+            "cross-doc: application_number differs from FATCA_ANNEXURE.policy_number = '65131125'",
+            "cross-doc: application_number differs from MORAL_HAZARD.application_number = '1500137601025'"
+          ],
+          "threshold": 0.8,
+          "read_conf": 0.748,
+          "two_pass": 0.929,
+          "cross_doc": 0.333
+        },
+        "name_of_life_assured": {
+          "value": "Ashok",
+          "raw": "Ashok",
+          "confidence": 0.814,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "' Askok .",
+              "conf": 0.541,
+              "normalized": "' Askok"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Ashok",
+              "conf": 0.768,
+              "normalized": "Ashok"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "# Ashsk .",
+              "conf": 0.533,
+              "normalized": "# Ashsk"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Ashok",
+              "conf": 0.543,
+              "normalized": "Ashok"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.768,
+          "two_pass": 0.867,
+          "cross_doc": 0.833
+        },
+        "name_of_agent_sp": {
+          "value": "Ramesh Kumar",
+          "raw": "Ramesh Kumar",
+          "confidence": 0.896,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "Ramesh Kumar",
+              "conf": 0.99,
+              "normalized": "Ramesh Kumar"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "Ramesh Kumar",
+              "conf": 0.95,
+              "normalized": "Ramesh Kumar"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "Ramesh Kumar",
+              "conf": 0.99,
+              "normalized": "Ramesh Kumar"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "Ramesh Kumar",
+              "conf": 0.953,
+              "normalized": "Ramesh Kumar"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": false,
+          "flag_reasons": [],
+          "threshold": 0.8,
+          "read_conf": 0.99,
+          "two_pass": 1.0,
+          "cross_doc": 0.5
+        },
+        "date": {
+          "value": "9/424",
+          "raw": "9/424",
+          "confidence": 0.192,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "colourful ,",
+              "conf": 0.47,
+              "normalized": "colourful ,"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "9/424",
+              "conf": 0.23,
+              "normalized": "9/424"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "colourful ,",
+              "conf": 0.39,
+              "normalized": "colourful ,"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "9/424",
+              "conf": 0.313,
+              "normalized": "9/424"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": false,
+            "messages": [
+              "not a valid DD/MM/YYYY date"
+            ]
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.19 < 0.85",
+            "validator failed: not a valid DD/MM/YYYY date"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.313,
+          "two_pass": 0.333,
+          "cross_doc": 0.5
+        },
+        "place": {
+          "value": "most extra",
+          "raw": "most extra",
+          "confidence": 0.617,
+          "handwritten": true,
+          "raw_readings": [
+            {
+              "version": "original",
+              "engine": "trocr",
+              "text": "most extra",
+              "conf": 0.704,
+              "normalized": "most extra"
+            },
+            {
+              "version": "original",
+              "engine": "easyocr_crop",
+              "text": "+loc L Bkx",
+              "conf": 0.144,
+              "normalized": "loc L Bkx"
+            },
+            {
+              "version": "enhanced",
+              "engine": "trocr",
+              "text": "most Ethan",
+              "conf": 0.517,
+              "normalized": "most Ethan"
+            },
+            {
+              "version": "enhanced",
+              "engine": "easyocr_crop",
+              "text": "~loc[ Bhar",
+              "conf": 0.306,
+              "normalized": "loc Bhar"
+            }
+          ],
+          "corrections": [],
+          "validator": {
+            "passed": true,
+            "messages": []
+          },
+          "flagged": true,
+          "flag_reasons": [
+            "confidence 0.62 < 0.85",
+            "cross-doc: signing_place differs from BENEFIT_ILLUSTRATION.place = 'hles A Bikax'",
+            "cross-doc: signing_place differs from MORAL_HAZARD.place = 'West Rams'",
+            "cross-doc: signing_place differs from MULTIPLE_POLICIES_CONSENT.place = 'West Bihar'"
+          ],
+          "threshold": 0.85,
+          "read_conf": 0.704,
+          "two_pass": 0.426,
+          "cross_doc": 0.0
+        }
+      },
+      "auxiliary": {}
+    }
+  ],
+  "cross_document_conflicts": [
+    {
+      "entity": "application_number",
+      "values": [
+        [
+          "FATCA_ANNEXURE.policy_number='65131125'"
+        ],
+        [
+          "BENEFIT_ILLUSTRATION.application_number='150013161095'"
+        ],
+        [
+          "MORAL_HAZARD.application_number='1500137601025'"
+        ],
+        [
+          "SUITABILITY_PROFILER.application_number='150013161025'"
+        ]
+      ]
+    },
+    {
+      "entity": "applicant_name",
+      "values": [
+        [
+          "AADHAAR.full_name='Mr. Ashok'",
+          "PAN.full_name='MR. ASHOK'",
+          "DRIVING_LICENCE.name='MR. ASHOK'",
+          "BENEFIT_ILLUSTRATION.policyholder_name='Ashok'",
+          "MULTIPLE_POLICIES_CONSENT.proposer_name='Ashok'",
+          "SUITABILITY_PROFILER.name_of_life_assured='Ashok'"
+        ],
+        [
+          "MORAL_HAZARD.name_of_life_assured='Asbok'"
+        ]
+      ]
+    },
+    {
+      "entity": "fathers_name",
+      "values": [
+        [
+          "PAN.fathers_name='KUMAR'"
+        ],
+        [
+          "FATCA_ANNEXURE.fathers_name='Arjun , Das Kuma'"
+        ]
+      ]
+    },
+    {
+      "entity": "pan",
+      "values": [
+        [
+          "PAN.pan_number='ABCDE1234F'"
+        ],
+        [
+          "FATCA_ANNEXURE.tin_pan='BPQPD3051R'"
+        ]
+      ]
+    },
+    {
+      "entity": "signing_place",
+      "values": [
+        [
+          "BENEFIT_ILLUSTRATION.place='hles A Bikax'"
+        ],
+        [
+          "MORAL_HAZARD.place='West Rams'"
+        ],
+        [
+          "MULTIPLE_POLICIES_CONSENT.place='West Bihar'"
+        ],
+        [
+          "SUITABILITY_PROFILER.place='most extra'"
+        ]
+      ]
+    },
+    {
+      "entity": "dl_state",
+      "values": [
+        "DL number prefix MH = MAHARASHTRA, but the licence address/authority mentions BIHAR"
+      ]
+    }
+  ]
+}

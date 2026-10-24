@@ -1,0 +1,82 @@
+{
+  "_note": "EVALUATION ONLY. Read exclusively by evaluate.py; the extraction pipeline never opens this file. MRZ line 2 verified on the image: 28 data chars + 20 '<' + '08' (50 chars, i.e. non-standard length for TD3).",
+  "_files": {
+    "Aadhar.png": "AADHAAR",
+    "ID.png": "PAN",
+    "ChatGPT Image May 2, 2026, 03_43_11 PM.png": "DRIVING_LICENCE",
+    "ChatGPT Image May 2, 2026, 03_52_54 PM.png": "PASSPORT",
+    "ECS.jpeg": "NACH_MANDATE",
+    "Fatca.jpeg": "FATCA_ANNEXURE",
+    "Illustration.jpeg": "BENEFIT_ILLUSTRATION",
+    "Moral.jpeg": "MORAL_HAZARD",
+    "split.jpeg": "MULTIPLE_POLICIES_CONSENT",
+    "suitability.jpeg": "SUITABILITY_PROFILER",
+    "Assignment Ashok.pdf": "OTHER",
+    "Proposal Ashok.pdf": "OTHER"
+  },
+  "AADHAAR": {
+    "aadhaar_number": "123456789012",
+    "full_name": "Mr. Ashok",
+    "date_of_birth": "18/12/1979",
+    "address": "S/O Kumar, Kataia, West Bihar, India - 841543"
+  },
+  "PAN": {
+    "pan_number": "ABCDE1234F",
+    "full_name": "MR. ASHOK",
+    "fathers_name": "KUMAR",
+    "date_of_birth": "18/12/1979"
+  },
+  "DRIVING_LICENCE": {
+    "dl_number": "MH12 2021 0001234",
+    "name": "MR. ASHOK",
+    "date_of_issue": "15/06/2021",
+    "valid_till": "14/06/2041"
+  },
+  "PASSPORT": {
+    "passport_number": "X1234567",
+    "date_of_birth": "18/12/1979",
+    "date_of_expiry": "01/01/2030",
+    "mrz_line_2": "X1234567<7IND7912185M3001010<<<<<<<<<<<<<<<<<<<<08"
+  },
+  "NACH_MANDATE": {
+    "bank_account_number": "31004258912",
+    "ifsc_code": "SBIN0227112",
+    "bank_name": "State Bank of India",
+    "amount_figures": "50000",
+    "frequency": "As & when presented"
+  },
+  "FATCA_ANNEXURE": {
+    "policy_number": "1500137601025",
+    "tin_pan": "BPQPD3051R",
+    "fathers_name": "Arjun Das Kumar",
+    "place_of_birth": "West Bihar",
+    "nationality": "Indian"
+  },
+  "BENEFIT_ILLUSTRATION": {
+    "application_number": "1500137601025",
+    "policyholder_name": "Ashok",
+    "date": "26/04/2026",
+    "place": "West Bihar"
+  },
+  "MORAL_HAZARD": {
+    "application_number": "1500137601025",
+    "name_of_life_assured": "Ashok",
+    "nominee_relationship": "Nephew",
+    "date": "26/04/2026",
+    "place": "West Bihar"
+  },
+  "MULTIPLE_POLICIES_CONSENT": {
+    "proposer_name": "Ashok",
+    "reason_for_multiple_policies": "Financial Planning",
+    "date": "26/04/2026",
+    "place": "West Bihar"
+  },
+  "SUITABILITY_PROFILER": {
+    "application_number": "1500137601025",
+    "name_of_life_assured": "Ashok",
+    "name_of_agent_sp": "Ramesh Kumar",
+    "date": "26/04/2026",
+    "place": "West Bihar"
+  },
+  "OTHER": {}
+}

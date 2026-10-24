@@ -1,0 +1,17 @@
+# CPU torch: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2
+torchvision>=0.17
+easyocr>=1.7
+transformers>=4.40
+sentencepiece
+opencv-python-headless>=4.8
+pymupdf>=1.24
+numpy
+pillow
+pydantic>=2
+python-dotenv
+pytest
+# optional (hybrid / llm modes)
+groq>=0.9
+# optional review UI (streamlit run app.py)
+streamlit>=1.46  # width="stretch" API
