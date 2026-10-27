@@ -58,3 +58,72 @@ Classification was 100% accurate. Printed fields were 100% accurate. On handwrit
 ## Pipeline
 
 The pipeline runs each document through seven stages.
+
+Document → [1] Preprocess → [2] Classify → [3] Extract → [4] Validate
+→ [5] Cross-check → [6] Score → [7] Flag → JSON + Reports
+
+**1. Preprocess.** PDFs are converted to images with PyMuPDF. Each page is deskewed, converted to grayscale and contrast-enhanced with CLAHE. Two versions are kept: original and enhanced.
+
+**2. Classify.** EasyOCR reads the whole page, then the pipeline matches printed anchor headings ("AADHAAR", "NACH MANDATE", "Section 285BA" and so on) to one of the 10 document types. Unknown pages are tagged as OTHER.
+
+**3. Extract.** For printed fields, the value is found by its label or by its format pattern. For handwritten fields, the printed label is located first, the area next to it is cropped, and the crop is read by both TrOCR and EasyOCR on both image versions, giving four readings. Checkbox fields are read by detecting which box has the most ink.
+
+**4. Validate.** Each value is checked against its format: IFSC regex, PAN regex, Aadhaar Verhoeff checksum, MRZ check digits, valid dates, amount in figures vs words. Format-aware corrections (O to 0, I to 1, S to 5) are applied only where the format demands a specific character type. Every correction is logged and lowers confidence.
+
+**5. Cross-check.** The same facts are compared across documents: application number, name, date of birth, PAN vs TIN, father's name, place. Mismatches are flagged, never auto-fixed.
+
+**6. Score.** Confidence per field is calculated as:
+`0.4 x OCR confidence + 0.3 x validator passed + 0.2 x two readings agree + 0.1 x cross-document match`
+Minus 0.05 for handwriting, and minus 0.05 for each character correction (up to 0.15).
+
+**7. Flag.** Threshold is 0.80 for printed fields and 0.85 for high-value handwritten fields. Anything below the threshold, any validator failure, and any cross-document conflict is sent to human review.
+
+**Output files** in the `output/` folder:
+- `extractions.json`: every field with value, confidence, raw readings, corrections and flags
+- `flag_report.md`: all flagged fields with reasons
+- `notes.md`: handwriting handling and failure cases
+- `eval_report.md`: field-level accuracy against the answer key
+
+## Running the Project Locally
+
+Tested on Ubuntu, macOS and Windows. Needs about 3 to 4 GB of free disk space for the OCR models.
+
+**1. Clone the repository**
+
+```bash
+git clone <your-repo-url>
+cd smart-kyc-extractor
+```
+
+**2. Create a virtual environment**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate      # macOS / Linux
+.venv\Scripts\activate         # Windows
+```
+
+**3. Install the dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+The first run downloads the OCR models (about 1.5 GB), so keep the internet on.
+
+**4. Add your documents**
+
+Put the 10 identity and insurance documents into `data/input/`.
+
+**5. Run the pipeline**
+
+Offline mode (default, no API key needed):
+
+```bash
+python run.py --mode offline
+```
+
+Hybrid mode (uses the free Groq vision LLM for low-confidence fields):
+
+- Get a free API key from console.groq.com
+- Copy `.env.example` to `.env` and paste your key:
