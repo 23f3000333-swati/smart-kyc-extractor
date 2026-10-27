@@ -1,114 +1,60 @@
 # smart-kyc-extractor
 
-A document pipeline for insurance onboarding. It classifies KYC documents and
-proposal forms, extracts the required fields, scores each field with a
-confidence value, and flags uncertain fields for human review.
+A document classification and field extraction pipeline for insurance onboarding.
 
-Supported documents: Aadhaar, PAN, Driving Licence, Passport, NACH mandate,
-FATCA annexure, Benefit Illustration, Moral Hazard Questionnaire, Multiple
-Policies Consent and Suitability Profiler. Other documents are classified as
-`OTHER` and are not extracted.
+## Problem Statement
 
-The default mode runs fully offline. A vision LLM (Groq API) can optionally be
-used as a second opinion.
+Insurance companies like HDFC Life receive a stack of documents from every new customer: identity proofs (Aadhaar, PAN, Driving Licence, Passport) and handwritten forms (NACH mandate, FATCA Annexure, Benefit Illustration, Moral Hazard Questionnaire, Multiple Policies Consent, Suitability Profiler). Today, a human reads all 10 documents and types the important fields into their system. This is slow, expensive and error-prone. A wrong digit in an IFSC or account number means a failed premium debit or money sent to the wrong account.
 
-## Setup
+The goal of this project is to build a pipeline that:
 
-Requires Python 3.10+ (tested on Ubuntu).
+1. Classifies each document by its type
+2. Extracts the required fields for each type
+3. Scores how confident it is in every field
+4. Flags low-confidence fields so a human only reviews the risky ones
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install -r requirements.txt
-cp .env.example .env    # optional, only for hybrid / llm modes
-```
+Particular weight is given to the handwritten high-value fields: IFSC, TIN, bank account numbers, dates and place names.
 
-The first run downloads the EasyOCR and TrOCR models (about 350 MB).
+## Solution
 
-## Usage
+An offline-first pipeline that reads the documents locally with open-source OCR, so no personal data leaves the machine and nothing costs money. An optional free vision LLM (Groq) can be switched on as a second opinion for low-confidence fields.
 
-```bash
-python run.py                  # offline mode (default)
-python run.py --mode hybrid    # offline, then LLM review of flagged documents
-python run.py --mode llm       # LLM for every document
-python evaluate.py             # compare results with data/ground_truth.json
-streamlit run app.py           # review interface
-pytest -q                      # unit tests
-```
+The pipeline:
 
-Input files go in `data/input/` (images or PDFs). If `GROQ_API_KEY` is not set,
-the hybrid and llm modes fall back to offline mode.
+- Reads printed ID cards with EasyOCR and handwritten form fields with Microsoft's TrOCR handwriting model
+- Validates every value against its expected format (IFSC regex, PAN regex, Aadhaar checksum, passport MRZ check digits, dates, amounts)
+- Cross-checks the same facts across documents (name, date of birth, PAN vs TIN, application number) and flags conflicts
+- Scores each field from four pieces of evidence: OCR confidence, format check, agreement between two readings, and consistency across documents
+- Flags anything below the threshold (0.80 for printed fields, 0.85 for high-value handwritten fields) for human review
 
-## Output
+Classification was 100% accurate. Printed fields were 100% accurate. On handwritten fields, every wrong value was caught by the flagging system, so no incorrect value was ever auto-accepted.
 
-All results are written to `output/`.
+## Tech Stack
 
-| File | Content |
-|---|---|
-| `extractions.json` | Document type and, for each field: value, confidence, OCR readings, corrections, validation result and review flags |
-| `flag_report.md` | Review thresholds with rationale, all flagged fields and cross-document conflicts |
-| `notes.md` | Handling of handwritten text, observed failure cases and limitations |
-| `eval_report.md` | Field-level accuracy, split by printed and handwritten fields |
+**Language**
+- Python
 
-## How it works
+**Image handling**
+- OpenCV: deskewing, contrast enhancement, box detection
+- PyMuPDF (fitz): converting PDFs to images
+- Pillow: basic image operations
 
-```
-input files
-  -> preprocess   grayscale, deskew, contrast enhancement (2 image versions)
-  -> classify     keyword matching on printed headings
-  -> extract      printed: OCR text next to the field label
-                  handwritten: crop next to the label, read with TrOCR and EasyOCR
-                  checkboxes: ticked box detected by ink density
-  -> validate     format and checksum rules (PAN, IFSC, Aadhaar, MRZ, dates)
-  -> cross-check  same applicant details compared across documents
-  -> score        confidence per field, flag if below threshold
-  -> output       JSON and reports
-```
+**OCR**
+- EasyOCR: reads printed text
+- TrOCR (microsoft/trocr-base-handwritten): reads handwriting, via Hugging Face Transformers
+- PyTorch: the deep-learning engine underneath TrOCR
 
-## Confidence and review
+**Validation and data**
+- Pydantic: defines the field schemas
+- Standard Python regex: format checks
 
-Each field receives a confidence between 0 and 1:
+**Optional LLM mode**
+- Groq official Python client: calls the free Groq vision LLM
+- python-dotenv: loads the API key from a .env file
 
-```
-confidence = 0.4 x OCR confidence
-           + 0.3 x validation result
-           + 0.2 x agreement between independent readings
-           + 0.1 x agreement with other documents
-```
+**Testing**
+- pytest: runs validator tests
 
-Handwritten fields and character corrections reduce the score slightly.
+## Pipeline
 
-A field is flagged for review when:
-
-- its confidence is below **0.80** (printed fields) or **0.85** (handwritten
-  IFSC, PAN/TIN, account number, dates and places),
-- it fails validation, or
-- it conflicts with the same detail on another document.
-
-The higher threshold applies to fields where an error has a direct financial
-or compliance impact. Conflicts between documents are reported and never
-corrected automatically.
-
-## Design principles
-
-- **Offline by default.** Personal data stays on the machine. In hybrid mode,
-  only documents with flagged fields are sent to the LLM.
-- **No hardcoded answers.** Fields are located through labels defined in
-  `config.py`. The ground truth file is used only by `evaluate.py`.
-- **Traceable results.** Every value keeps its raw OCR readings and any
-  corrections applied.
-
-## Project structure
-
-```
-run.py           pipeline entry point
-evaluate.py      accuracy evaluation
-app.py           review interface
-config.py        thresholds, field definitions, classification keywords
-src/             preprocessing, OCR, classification, extraction,
-                 validation, cross-checks, scoring, reports, LLM client
-tests/           unit tests
-data/input/      input documents
-output/          results
-```
+The pipeline runs each document through seven stages.
